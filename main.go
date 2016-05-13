@@ -106,7 +106,7 @@ func tiltGrid(grid [4][4]int, direction int) [4][4]int {
         }
     } else if direction == 2 {
         //Down
-        for index := range takenSquares {
+        for index := len(takenSquares) - 1; index >= 0; index-- {
             square := takenSquares[index]
             for square.y != 3 {
                 //check if the space above it is free
@@ -154,7 +154,7 @@ func tiltGrid(grid [4][4]int, direction int) [4][4]int {
         }
     } else if direction == 4 {
         //Right
-        for index := range takenSquares {
+        for index := len(takenSquares) - 1; index >= 0; index-- {
             square := takenSquares[index]
             for square.x != 3 {
                 //check if the space above it is free
